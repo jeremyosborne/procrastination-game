@@ -4,27 +4,46 @@
   "description": "the reward for loitering",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "flow": "flow `# flow does not respect NODE_PATH, path alias handled in .flowconfig`",
+    "lint": "eslint \"src/**/*.js?(x)\"",
+    "test": "NODE_PATH=src jest --config .jest.config.js"
   },
   "author": "Jeremy Osborne <jeremywosborne@gmail.com>",
   "license": "MIT",
+  "husky": {
+    "hooks": {
+      "pre-push": "npm run lint && npm run flow && npm test"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeremyosborne/procrastination-game.git"
+  },
   "dependencies": {
-    "redux": "^4.0.1",
-    "redux-saga": "^0.16.2",
-    "redux-thunk": "^2.3.0"
+    "react": "16.11.0"
   },
   "devDependencies": {
-    "babel-eslint": "^10.0.1",
-    "eslint": "^5.11.1",
-    "eslint-config-standard": "^12.0.0",
-    "eslint-config-standard-react": "^7.0.2",
-    "eslint-import-resolver-webpack": "^0.10.1",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-node": "^8.0.0",
-    "eslint-plugin-promise": "^4.0.1",
-    "eslint-plugin-react": "^7.12.0",
-    "eslint-plugin-standard": "^4.0.0",
-    "webpack": "^4.28.3",
-    "webpack-cli": "^3.1.2"
+    "@babel/cli": "^7.6.4",
+    "@babel/core": "^7.6.4",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/preset-env": "^7.6.3",
+    "@babel/preset-flow": "^7.0.0",
+    "babel-eslint": "^10.0.3",
+    "babel-jest": "^24.9.0",
+    "babel-plugin-lodash": "^3.3.4",
+    "eslint": "^6.6.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-config-standard-react": "^9.2.0",
+    "eslint-import-resolver-webpack": "^0.11.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^10.0.0n",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.16.0",
+    "eslint-plugin-standard": "^4.0.1",
+    "flow-bin": "^0.111.1",
+    "husky": "^3.0.9",
+    "jest": "24.9.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
   }
 }
