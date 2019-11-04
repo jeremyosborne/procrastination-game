@@ -3,11 +3,19 @@ import ReactDOM from 'react-dom'
 import Counter from './Counter'
 
 export const main = ({
-  rootId = 'achievements'
+  rootId = '#achievements'
 } = {}) => {
+  let root = document.querySelector(rootId)
+
+  if (!root) {
+    root = document.createElement('div')
+    root.id = rootId
+    document.body.appendChild(root)
+  }
+
   ReactDOM.render(
     <Counter />,
-    document.getElementById(rootId)
+    root
   )
 }
 

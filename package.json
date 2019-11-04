@@ -7,6 +7,7 @@
   "scripts": {
     "flow": "flow `# flow does not respect NODE_PATH, path alias handled in .flowconfig`",
     "lint": "eslint \"src/**/*.js?(x)\"",
+    "start": "webpack-dev-server --open `# start is dev focused since goal is to output shared lib for other apps.`",
     "test": "NODE_PATH=src jest --config .jest.config.js"
   },
   "author": "Jeremy Osborne <jeremywosborne@gmail.com>",
@@ -51,6 +52,7 @@
     "husky": "^3.0.9",
     "jest": "24.9.0",
     "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.10"
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0"
   }
 }

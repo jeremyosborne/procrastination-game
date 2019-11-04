@@ -24,7 +24,6 @@ Silly, unlockable content for my webpage, a reward for those who loiter.
 
 ## TODO
 
-- [ ] Webpack dev-server.
 * Unlock Achievements Unlocked
     * Requirement: Spend a minute on the website.
     * Downstream: Unlock achievements. Is a pre-req for all achievements and requirements for achievements will not be recorded until this is achieved.
