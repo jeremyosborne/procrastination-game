@@ -1,16 +1,25 @@
 {
   "extends": ["standard", "standard-react"],
+  "env": {
+    "jest": true,
+  },
   "parser": "babel-eslint",
   "plugins": [
-     "import",
+    "flowtype",
+    "import",
   ],
-  "settings": {
-    "import/resolver": "webpack",
-  },
   "rules": {
     "import/no-unresolved": ["error"],
     "comma-dangle": ["error", "only-multiline"],
     "object-curly-spacing": ["error", "never"],
     "yoda": ["off"],
+  },
+  "settings": {
+    "import/extensions": [".js", ".jsx"],
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx"]
+      }
+    }
   },
 }

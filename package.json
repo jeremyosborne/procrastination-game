@@ -2,7 +2,7 @@
   "name": "procrastination-game",
   "version": "0.0.1",
   "description": "the reward for loitering",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "flow": "flow `# flow does not respect NODE_PATH, path alias handled in .flowconfig`",
     "lint": "eslint \"src/**/*.js?(x)\"",
@@ -20,7 +20,9 @@
     "url": "git+https://github.com/jeremyosborne/procrastination-game.git"
   },
   "dependencies": {
-    "react": "16.11.0"
+    "lodash": "^4.17.15",
+    "react": "16.11.0",
+    "react-dom": "^16.11.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.6.4",
@@ -28,13 +30,16 @@
     "@babel/plugin-proposal-class-properties": "^7.5.5",
     "@babel/preset-env": "^7.6.3",
     "@babel/preset-flow": "^7.0.0",
+    "@babel/preset-react": "^7.6.3",
     "babel-eslint": "^10.0.3",
     "babel-jest": "^24.9.0",
+    "babel-loader": "^8.0.6",
     "babel-plugin-lodash": "^3.3.4",
     "eslint": "^6.6.0",
     "eslint-config-standard": "^14.1.0",
     "eslint-config-standard-react": "^9.2.0",
     "eslint-import-resolver-webpack": "^0.11.1",
+    "eslint-plugin-flowtype": "^4.3.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-node": "^10.0.0n",
     "eslint-plugin-promise": "^4.2.1",
