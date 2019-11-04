@@ -2,6 +2,7 @@
   "name": "procrastination-game",
   "version": "0.0.1",
   "description": "the reward for loitering",
+  "private": "true",
   "main": "src/index.js",
   "scripts": {
     "flow": "flow `# flow does not respect NODE_PATH, path alias handled in .flowconfig`",
@@ -46,6 +47,7 @@
     "eslint-plugin-react": "^7.16.0",
     "eslint-plugin-standard": "^4.0.1",
     "flow-bin": "^0.111.1",
+    "html-webpack-plugin": "^3.2.0",
     "husky": "^3.0.9",
     "jest": "24.9.0",
     "webpack": "^4.41.2",

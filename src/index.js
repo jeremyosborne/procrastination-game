@@ -1,7 +1,14 @@
+import React from 'react'
 import ReactDOM from 'react-dom'
 import Counter from './Counter'
 
-ReactDOM.render(
-  Counter,
-  document.getElementById('root')
-)
+export const main = ({
+  rootId = 'achievements'
+} = {}) => {
+  ReactDOM.render(
+    <Counter />,
+    document.getElementById(rootId)
+  )
+}
+
+main()
