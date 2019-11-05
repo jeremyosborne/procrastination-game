@@ -7,11 +7,14 @@
   "plugins": [
     "flowtype",
     "import",
+    "react-hooks",
   ],
   "rules": {
-    "import/no-unresolved": ["error"],
     "comma-dangle": ["error", "only-multiline"],
+    "import/no-unresolved": ["error"],
     "object-curly-spacing": ["error", "never"],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
     "yoda": ["off"],
   },
   "settings": {
