@@ -1,11 +1,14 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 import _ from 'lodash'
+import NotRedux from './NotRedux'
 
 export const EventListener = () => {
-  useEffect(() => {
+  const {dispatch} = React.useContext(NotRedux)
+
+  React.useEffect(() => {
     const eventMap = {
-      click: (e) => console.log('click:', e.which),
-      keydown: (e) => console.log('keydown:', e.which),
+      click: (e) => dispatch(e),
+      keydown: (e) => dispatch(e),
     }
 
     _.forEach(eventMap, (eventListener, eventName) => {
@@ -18,7 +21,7 @@ export const EventListener = () => {
         window.removeEventListener(eventName, eventListener, false)
       })
     }
-  })
+  }, [dispatch]) // Only run on mount and dismount.
 
   return (
     <div />
