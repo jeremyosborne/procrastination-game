@@ -1,7 +1,8 @@
+import {AppState, reducer} from 'AppState'
+import DebugStateView from 'DebugStateView'
+import AchievementUnlockAchievements from 'AchievementUnlockAchievements'
+import EventListener from 'EventListener'
 import React from 'react'
-import DummyContent from './DummyContent'
-import EventListener from './EventListener'
-import {AppState, reducer} from './AppState'
 
 export const App = () => {
   const initialState = {}
@@ -10,7 +11,8 @@ export const App = () => {
   return (
     <AppState.Provider value={{state, dispatch}}>
       <EventListener />
-      <DummyContent />
+      <AchievementUnlockAchievements />
+      <DebugStateView />
     </AppState.Provider>
   )
 }

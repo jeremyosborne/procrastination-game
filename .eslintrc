@@ -21,8 +21,12 @@
     "import/extensions": [".js", ".jsx"],
     "import/resolver": {
       "node": {
-        "extensions": [".js", ".jsx"]
-      }
-    }
+        "extensions": [".js", ".jsx"],
+        "moduleDirectory": [
+          "node_modules",
+          "src",
+        ],
+      },
+    },
   },
 }

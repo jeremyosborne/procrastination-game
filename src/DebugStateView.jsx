@@ -5,9 +5,9 @@ export const DummyContent = () => {
   const {state} = useAppState()
 
   return (
-    <div>
-      {JSON.stringify(state)}
-    </div>
+    <pre>
+      {JSON.stringify(state, null, 4)}
+    </pre>
   )
 }
 
