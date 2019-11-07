@@ -1,8 +1,8 @@
 import React from 'react'
-import NotRedux from './NotRedux'
+import {useAppState} from './AppState'
 
 export const DummyContent = () => {
-  const {state} = React.useContext(NotRedux)
+  const {state} = useAppState()
 
   return (
     <div>

@@ -1,14 +1,14 @@
 import React from 'react'
 import _ from 'lodash'
-import NotRedux from './NotRedux'
+import {useAppState} from './AppState'
 
 export const EventListener = () => {
-  const {dispatch} = React.useContext(NotRedux)
+  const {dispatch} = useAppState()
 
   React.useEffect(() => {
     const eventMap = {
-      click: (e) => dispatch(e),
-      keydown: (e) => dispatch(e),
+      click: (e) => dispatch({type: e.type, payload: e}),
+      keydown: (e) => dispatch({type: e.type, payload: e}),
     }
 
     _.forEach(eventMap, (eventListener, eventName) => {
