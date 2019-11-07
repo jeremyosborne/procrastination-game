@@ -1,4 +1,4 @@
-// import _ from 'lodash'
+import _ from 'lodash'
 import NotRedux from './NotRedux'
 import React from 'react'
 
@@ -29,8 +29,7 @@ export const reducer = (state, action) => {
     case 'keydown':
       return {
         ...state,
-        [`${'char-' + action.payload.char}`]: (state[action.payload.char] || 0) + 1,
-        [`${'code-' + action.payload.code}`]: (state[action.payload.code] || 0) + 1
+        keydowns: _.takeRight([...(state.keydowns || []), action.payload.char], 15),
       }
     case 'tick':
       return {
