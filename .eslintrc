@@ -12,7 +12,11 @@
   "rules": {
     "comma-dangle": ["error", "only-multiline"],
     "import/no-unresolved": ["error"],
+    // This prevents conflict with react/jsx indenting. Ugh.
+    "indent": ["error", 2, {"ignoredNodes": ["JSXElement"]}],
     "object-curly-spacing": ["error", "never"],
+    // Editor and eslint rules are fighting in the JSX autoformatting.
+    "operator-linebreak": ["off"],
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
     "yoda": ["off"],

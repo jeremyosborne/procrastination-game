@@ -1,6 +1,6 @@
 import {AppState, reducer} from 'AppState'
 import DebugStateView from 'DebugStateView'
-import AchievementUnlockAchievements from 'AchievementUnlockAchievements'
+import * as Achievements from 'Achievements'
 import EventListener from 'EventListener'
 import React from 'react'
 
@@ -11,7 +11,7 @@ export const App = () => {
   return (
     <AppState.Provider value={{state, dispatch}}>
       <EventListener />
-      <AchievementUnlockAchievements />
+      <Achievements.UnlockAchievements />
       <DebugStateView />
     </AppState.Provider>
   )
