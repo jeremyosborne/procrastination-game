@@ -12,6 +12,7 @@ export const App = () => {
     <AppState.Provider value={{state, dispatch}}>
       <EventListener />
       <Achievements.UnlockAchievements />
+      <Achievements.StayinAlive />
       <DebugStateView />
     </AppState.Provider>
   )

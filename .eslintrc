@@ -13,7 +13,10 @@
     "comma-dangle": ["error", "only-multiline"],
     "import/no-unresolved": ["error"],
     // This prevents conflict with react/jsx indenting. Ugh.
-    "indent": ["error", 2, {"ignoredNodes": ["JSXElement"]}],
+    "indent": ["error", 2, {
+      "ignoredNodes": ["JSXElement"],
+      "SwitchCase": 1,
+    }],
     "object-curly-spacing": ["error", "never"],
     // Editor and eslint rules are fighting in the JSX autoformatting.
     "operator-linebreak": ["off"],
