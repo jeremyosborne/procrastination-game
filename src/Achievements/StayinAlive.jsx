@@ -60,11 +60,10 @@ export const StayinAlive = () => {
     }
 
     const progress = _.floor(calcLongestMatch(ACHIEVEMENT_CODE, keys) / ACHIEVEMENT_CODE.length, 2)
+    setProgress(progress)
 
     if (progress === 1) {
       dispatch(actionAchievementsAchieved(ACHIEVEMENT_IDS.STAYIN_ALIVE))
-    } else {
-      setProgress(progress)
     }
   }, [achieved, dispatch, keys])
 

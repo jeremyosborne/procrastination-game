@@ -31,14 +31,7 @@ export const UnlockAchievements = () => {
 
     const updatedProgress = _.floor(ticks / ACHIEVEMENT_NUM_TICKS, 2)
     setProgress(updatedProgress)
-  }, [achieved, ticks])
-
-  React.useEffect(() => {
-    if (achieved) {
-      return
-    }
-
-    if (ticks > ACHIEVEMENT_NUM_TICKS) {
+    if (updatedProgress === 1) {
       dispatch(actionAchievementsAchieved(ACHIEVEMENT_IDS.UNLOCK_ACHIEVEMENTS))
     }
   }, [achieved, dispatch, ticks])
