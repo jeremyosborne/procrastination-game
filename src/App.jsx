@@ -11,8 +11,10 @@ export const App = () => {
   return (
     <AppState.Provider value={{state, dispatch}}>
       <EventListener />
-      <Achievements.UnlockAchievements />
-      <Achievements.StayinAlive />
+      <div style={{display: 'flex'}}>
+        <Achievements.UnlockAchievements />
+        <Achievements.StayinAlive />
+      </div>
       <DebugStateView />
     </AppState.Provider>
   )
