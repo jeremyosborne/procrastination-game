@@ -12,13 +12,30 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
+        test: /\.css$/i,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+            },
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              config: {
+                path: '.postcss.config.js',
+              }
+            }
+          }
+        ],
+      },
+      {
+        test: /\.jsx?$/i,
         exclude: /(node_modules|bower_components)/,
         use: {
           loader: 'babel-loader',
-          // options: {
-          //   presets: ['@babel/preset-env']
-          // },
         },
       },
     ],
