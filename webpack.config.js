@@ -24,9 +24,12 @@ module.exports = {
           {
             loader: 'postcss-loader',
             options: {
-              config: {
-                path: '.postcss.config.js',
-              }
+              ident: 'postcss',
+              // Due to https://github.com/postcss/postcss-loader/issues/204#issuecomment-380885660
+              // don't use external config, it seems duplicate work.
+              plugins: [
+                require('autoprefixer'),
+              ]
             }
           }
         ],

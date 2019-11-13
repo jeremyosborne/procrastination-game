@@ -1,0 +1,37 @@
+.container {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  width: 0;
+  /* This is achievement specific, not a very generalized drawer. */
+  min-height: 9rem;
+}
+
+.container.open {
+  width: 100%;
+}
+
+.content {
+  display: flex;
+  overflow-x: scroll;
+  width: 0;
+}
+
+.content.open {
+  width: 100%;
+}
+
+/* When !open, button is edged into view on the left side from the closed drawer. */
+.button {
+  align-items: center;
+  display: flex;
+  height: 4.6rem;
+  justify-content: center;
+  right: -2.83rem; /* Visible relative to width of button. */
+  position: absolute;
+  width: 2.83rem;
+}
+.button.open {
+  position: static;
+}

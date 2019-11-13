@@ -12,11 +12,10 @@ export const App = () => {
   return (
     <AppState.Provider value={{state, dispatch}}>
       <EventListener />
-      <Drawer />
-      <div style={{display: 'flex'}}>
+      <Drawer>
         <Achievements.UnlockAchievements />
         <Achievements.StayinAlive />
-      </div>
+      </Drawer>
       <DebugStateView />
     </AppState.Provider>
   )
