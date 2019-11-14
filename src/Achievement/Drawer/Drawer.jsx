@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind'
 import React from 'react'
 
-import styles from './AchievementDrawer.css'
+import styles from './Drawer.css'
 
 const cx = classNames.bind(styles)
 
@@ -12,7 +12,7 @@ type Props = {
   initialState?: boolean,
 }
 
-export const AchievementDrawer = ({
+export const Drawer = ({
   children,
   initialState = false,
 }: Props = {}) => {
@@ -36,4 +36,4 @@ export const AchievementDrawer = ({
   )
 }
 
-export default AchievementDrawer
+export default Drawer

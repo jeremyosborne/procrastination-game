@@ -1,4 +1,4 @@
-import AchievementLayout from 'common-components/AchievementLayout'
+import Achievement from 'Achievement'
 import ACHIEVEMENT_IDS from './achievement-ids'
 import {actionAchievementsAchieved, useAppState} from 'AppState'
 import _ from 'lodash'
@@ -69,12 +69,12 @@ export const StayinAlive = () => {
   }, [achieved, dispatch, keys])
 
   return (
-    <AchievementLayout.Card>
-      <AchievementLayout.Content>
+    <Achievement.Layout.Card>
+      <Achievement.Layout.Content>
         {achieved ? <div>30 Lives!</div> : <div>You know the code...</div>}
-      </AchievementLayout.Content>
-      <AchievementLayout.ProgressBar progress={progress} />
-    </AchievementLayout.Card>
+      </Achievement.Layout.Content>
+      <Achievement.Layout.ProgressBar progress={progress} />
+    </Achievement.Layout.Card>
   )
 }
 

@@ -1,3 +1,9 @@
-export {default as ACHIEVEMENT_IDS} from './achievement-ids'
-export {default as UnlockAchievements} from './UnlockAchievements'
-export {default as StayinAlive} from './StayinAlive'
+import ACHIEVEMENT_IDS from './achievement-ids'
+import StayinAlive from './StayinAlive'
+import UnlockAchievements from './UnlockAchievements'
+
+export default {
+  ACHIEVEMENT_IDS,
+  StayinAlive,
+  UnlockAchievements,
+}

@@ -1,24 +1,24 @@
-import * as Achievements from 'Achievements'
+import Achievements from 'Achievements'
 import {AppState, reducer} from 'AppState'
 import DebugStateView from 'DebugStateView'
-import AchievementDrawer from 'common-components/AchievementDrawer'
+import Achievement from 'Achievement'
 import EventListener from 'EventListener'
 import React from 'react'
 
-export const App = () => {
+export const AchievementsApp = () => {
   const initialState = {}
   const [state, dispatch] = React.useReducer(reducer, initialState)
 
   return (
     <AppState.Provider value={{state, dispatch}}>
       <EventListener />
-      <AchievementDrawer>
+      <Achievement.Drawer>
         <Achievements.UnlockAchievements />
         <Achievements.StayinAlive />
-      </AchievementDrawer>
+      </Achievement.Drawer>
       <DebugStateView />
     </AppState.Provider>
   )
 }
 
-export default App
+export default AchievementsApp

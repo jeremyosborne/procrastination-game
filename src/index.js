@@ -1,11 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import App from './App'
+import AchievementsApp from './AchievementsApp'
 
 export const main = ({
-  rootId = '#achievements'
+  rootId = 'achievements'
 } = {}) => {
-  let root = document.querySelector(rootId)
+  let root = document.getElementById(rootId)
 
   if (!root) {
     root = document.createElement('div')
@@ -14,7 +14,7 @@ export const main = ({
   }
 
   ReactDOM.render(
-    <App />,
+    <AchievementsApp />,
     root
   )
 }

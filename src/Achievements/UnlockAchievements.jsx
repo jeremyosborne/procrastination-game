@@ -1,4 +1,4 @@
-import AchievementLayout from 'common-components/AchievementLayout'
+import Achievement from 'Achievement'
 import ACHIEVEMENT_IDS from './achievement-ids'
 import {actionAchievementsAchieved, useAppState} from 'AppState'
 import _ from 'lodash'
@@ -38,12 +38,12 @@ export const UnlockAchievements = () => {
   }, [achieved, dispatch, ticks])
 
   return (
-    <AchievementLayout.Card>
-      <AchievementLayout.Content>
+    <Achievement.Layout.Card>
+      <Achievement.Layout.Content>
         {achieved ? <div>Unlock Achievements unlocked!</div> : <div>Wait for it...</div>}
-      </AchievementLayout.Content>
-      <AchievementLayout.ProgressBar progress={progress} />
-    </AchievementLayout.Card>
+      </Achievement.Layout.Content>
+      <Achievement.Layout.ProgressBar progress={progress} />
+    </Achievement.Layout.Card>
   )
 }
 

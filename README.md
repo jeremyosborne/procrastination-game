@@ -24,18 +24,20 @@ Silly, unlockable content for my webpage, a reward for those who loiter.
 
 ## TODO
 
-* Unlock Achievements Unlocked
+- [ ] Make this the basis for my website.
+    - [ ] Add styling and assets to static, copy to dist via copy plugin in webpack.
+- [ ] Unlock Achievements Unlocked
     * Requirement: Spend a minute on the website.
     * Downstream: Unlock achievements. Is a pre-req for all achievements and requirements for achievements will not be recorded until this is achieved.
-* Achievement: Nosy
+- [ ] Achievement: Nosy
     * Requirement: Click/tap a link.
-* Achievement: Curious
+- [ ] Achievement: Curious
     * Requirement: Click/tap a non link.
-* Achievement: Repeat Visitor
+- [ ] Achievement: Repeat Visitor
     * Requirement: Return to the website after having previously visited.
-* Achievement: Long Live the 80s (or 90s, whichever seems more appropriate)
+- [ ] Achievement: Long Live the 80s (or 90s, whichever seems more appropriate)
     * Requirement: Input the konami code.
-* Loot Boxes
+- [ ] Loot Boxes
     * ???: How does this get unlocked? Five minutes on the site?
     * Button: Clickable lootbox.
     * Loot box treasures ???
