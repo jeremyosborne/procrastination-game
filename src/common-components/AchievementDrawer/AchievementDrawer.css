@@ -2,10 +2,11 @@
   align-items: center;
   display: flex;
   justify-content: space-between;
-  position: relative;
-  width: 0;
   /* This is achievement specific, not a very generalized drawer. */
   min-height: 9rem;
+  position: relative;
+  transition: width 0.25s ease-out;
+  width: 0;
 }
 
 .container.open {
@@ -15,6 +16,7 @@
 .content {
   display: flex;
   overflow-x: scroll;
+  transition: width 0.25s ease-out;
   width: 0;
 }
 

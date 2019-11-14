@@ -1,7 +1,7 @@
 import * as Achievements from 'Achievements'
 import {AppState, reducer} from 'AppState'
 import DebugStateView from 'DebugStateView'
-import Drawer from 'common-components/Drawer'
+import AchievementDrawer from 'common-components/AchievementDrawer'
 import EventListener from 'EventListener'
 import React from 'react'
 
@@ -12,10 +12,10 @@ export const App = () => {
   return (
     <AppState.Provider value={{state, dispatch}}>
       <EventListener />
-      <Drawer>
+      <AchievementDrawer>
         <Achievements.UnlockAchievements />
         <Achievements.StayinAlive />
-      </Drawer>
+      </AchievementDrawer>
       <DebugStateView />
     </AppState.Provider>
   )
