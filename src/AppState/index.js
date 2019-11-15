@@ -1,5 +1,5 @@
 import _ from 'lodash'
-import NotRedux from 'NotRedux'
+import {NotRedux} from 'not-redux'
 import React from 'react'
 
 export const actionAchievementsAchieved = (id) => {

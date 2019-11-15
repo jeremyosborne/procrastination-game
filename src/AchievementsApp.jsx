@@ -1,7 +1,7 @@
 import Achievements from 'Achievements'
 import {AppState, reducer} from 'AppState'
-import DebugStateView from 'DebugStateView'
 import Achievement from 'Achievement'
+import {JSONView} from 'developer'
 import EventListener from 'EventListener'
 import React from 'react'
 
@@ -16,7 +16,7 @@ export const AchievementsApp = () => {
         <Achievements.UnlockAchievements />
         <Achievements.StayinAlive />
       </Achievement.Drawer>
-      <DebugStateView />
+      <JSONView data={state} />
     </AppState.Provider>
   )
 }
