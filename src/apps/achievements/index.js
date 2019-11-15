@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import AchievementsApp from './AchievementsApp'
+import App from 'achievements/App'
 
 export const main = ({
   rootId = 'achievements'
@@ -14,7 +14,7 @@ export const main = ({
   }
 
   ReactDOM.render(
-    <AchievementsApp />,
+    <App />,
     root
   )
 }

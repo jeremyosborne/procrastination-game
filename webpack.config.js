@@ -7,7 +7,7 @@ module.exports = {
     hot: true,
   },
   devtool: 'inline-source-map',
-  entry: './src/index.js',
+  entry: './src/apps/achievements/index.js',
   mode: 'development',
   module: {
     rules: [
@@ -44,7 +44,7 @@ module.exports = {
     ],
   },
   output: {
-    filename: 'main.js',
+    filename: 'achievements-main.js',
     path: path.resolve(__dirname, 'dist'),
   },
   plugins: [
@@ -58,7 +58,8 @@ module.exports = {
     // (does not apply to resolving to loaders)
     modules: [
       'node_modules',
-      path.resolve(__dirname, 'src')
+      path.resolve(__dirname, 'src/apps'),
+      path.resolve(__dirname, 'src'),
     ],
     // directories where to look for modules
     extensions: ['.js', '.json', '.jsx', '.css'],

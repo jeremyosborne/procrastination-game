@@ -1,5 +1,5 @@
+import {NotRedux} from 'common/not-redux'
 import _ from 'lodash'
-import {NotRedux} from 'not-redux'
 import React from 'react'
 
 export const actionAchievementsAchieved = (id) => {
@@ -102,8 +102,9 @@ export const reducer = (state, action) => {
   return state
 }
 
+// Stick with the redux "ducks" pattern and export the reducer as default.
+export default reducer
+
 export const AppState = NotRedux
 
 export const useAppState = () => React.useContext(AppState)
-
-export default AppState

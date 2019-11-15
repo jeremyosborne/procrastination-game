@@ -1,11 +1,11 @@
-import React from 'react'
-import _ from 'lodash'
 import {
   actionClick,
   actionKeyDown,
   actionTick,
   useAppState,
-} from './AppState'
+} from 'achievements/state'
+import _ from 'lodash'
+import React from 'react'
 
 export const EventListener = () => {
   const {dispatch} = useAppState()

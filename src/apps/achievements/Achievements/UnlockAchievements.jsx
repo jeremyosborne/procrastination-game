@@ -1,6 +1,6 @@
-import Achievement from 'Achievement'
 import ACHIEVEMENT_IDS from './achievement-ids'
-import {actionAchievementsAchieved, useAppState} from 'AppState'
+import Achievement from 'achievements/Achievement'
+import {actionAchievementsAchieved, useAppState} from 'achievements/state'
 import _ from 'lodash'
 import React from 'react'
 
