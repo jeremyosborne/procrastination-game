@@ -1,13 +1,18 @@
+const CopyPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const path = require('path')
 
 module.exports = {
   devServer: {
-    contentBase: './dist',
+    // The application may request static, non compiled assets. If these exist
+    // they will be located in this directory. There seems to be multiple solutions
+    // to this, like with the copy-webpack-plugin, but this seems to be the best
+    // solution for the dev-server "build" since it prevents unnecessary copying.
+    contentBase: path.join(__dirname, 'static'),
     hot: true,
   },
   devtool: 'inline-source-map',
-  entry: './src/apps/achievements/index.js',
+  entry: path.join(__dirname, 'src/apps/achievements/index.js'),
   mode: 'development',
   module: {
     rules: [
@@ -48,10 +53,13 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
   },
   plugins: [
+    new CopyPlugin([
+      {from: path.join(__dirname, 'static'), to: path.join(__dirname, 'dist')},
+    ]),
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      template: 'static/index.html',
-    })
+      template: path.join(__dirname, 'src/assets/index.html'),
+    }),
   ],
   resolve: {
     // options for resolving module requests
