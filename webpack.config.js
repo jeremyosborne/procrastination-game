@@ -2,6 +2,9 @@ const CopyPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const path = require('path')
 
+// TODO: need a production build and some notes about file system structure
+// since this is going to become my blog.
+
 module.exports = {
   devServer: {
     // The application may request static, non compiled assets. If these exist
