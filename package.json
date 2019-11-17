@@ -5,9 +5,10 @@
   "private": "true",
   "main": "src/index.js",
   "scripts": {
+    "build": "NODE_PATH=src/apps:src BUILD_TYPE=production webpack",
     "flow": "flow `# flow does not respect NODE_PATH, path alias handled in .flowconfig`",
     "lint": "eslint \"src/**/*.js?(x)\"",
-    "start": "webpack-dev-server --open `# start is dev focused since goal is to output shared lib for other apps.`",
+    "start": "NODE_PATH=src/apps:src BUILD_TYPE=development webpack-dev-server --open `# Start is dev focused. Use npm run build to produce files suitable for hosting.`",
     "test": "NODE_PATH=src/apps:src jest --config .jest.config.js"
   },
   "author": "Jeremy Osborne <jeremywosborne@gmail.com>",
