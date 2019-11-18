@@ -20,9 +20,11 @@ Modern JS needs a tool chain and build process. The tools included in this proje
 
 ## TODO
 
+- [ ] Style and organize achievement code so it's working as it should on the main website, even if not perfect.
+- [ ] Test out website locally, making sure the application is seeded as appropriate (the app should load async one way or another).
+- [ ] Do first publish back to jeremyosborne.com.
 - [X] Make this the basis for my website.
     - [X] Add styling and assets to static, copy to dist via copy plugin in webpack.
-    - [ ] Do first publish at some point.
 - [ ] Unlock Achievements Unlocked
     * Requirement: Spend a minute on the website.
     * Downstream: Unlock achievements. Is a pre-req for all achievements and requirements for achievements will not be recorded until this is achieved.
