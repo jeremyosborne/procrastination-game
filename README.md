@@ -22,6 +22,7 @@ Modern JS needs a tool chain and build process. The tools included in this proje
 
 - [ ] Style and organize achievement code so it's working as it should on the main website, even if not perfect.
 - [ ] Test out website locally, making sure the application is seeded as appropriate (the app should load async one way or another).
+- [X] Hide hacked up dev tools in prod build.
 - [ ] Do first publish back to jeremyosborne.com.
 - [X] Make this the basis for my website.
     - [X] Add styling and assets to static, copy to dist via copy plugin in webpack.

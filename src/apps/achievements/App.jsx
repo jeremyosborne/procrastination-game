@@ -1,6 +1,6 @@
 import Achievements from 'achievements/Achievements'
 import Achievement from 'achievements/Achievement'
-import {JSONView} from 'common/developer'
+import AppStateView from 'achievements/AppStateView'
 import EventListener from 'achievements/EventListener'
 import {AppState, reducer} from 'achievements/state'
 import React from 'react'
@@ -16,7 +16,12 @@ export const App = () => {
         <Achievements.UnlockAchievements />
         <Achievements.StayinAlive />
       </Achievement.Drawer>
-      <JSONView data={state} />
+      {
+        process.env.NODE_ENV === 'development' ?
+          <AppStateView />
+          :
+          null
+      }
     </AppState.Provider>
   )
 }
