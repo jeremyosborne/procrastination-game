@@ -12,7 +12,7 @@ Silly, unlockable content for my webpage, a reward for those who loiter.
 
 Modern JS needs a tool chain and build process. The tools included in this project should stick to their job and be runnable as a distinct process as much as possible.
 
-* `package.json` scripts define separate build names, which within the scripts will define build time variables.
+* `package.json.scripts` define build tasks via env vars and executables.
 * `webpack.config.js` consumes build time variables and translates them into a suitable `webpack` configuration.
 * `webpack` acts as build orchestrator, linker, and packager. We use just enough of its magic to keep ourselves productive.
 * `postcss` tools have the job of CSS compiler since, to this day, Douglas Crawford is right about the meaning of `C` in `CSS`. Plus it also allows us to think of and pack our components as modules and separate out global CSS applied to all pages of our application from module specific CSS that should be managed by webpack.

@@ -12,7 +12,8 @@
   "rules": {
     "comma-dangle": ["error", "only-multiline"],
     "import/no-unresolved": ["error"],
-    // This prevents conflict with react/jsx indenting. Ugh.
+    // This prevents conflict with react/jsx indenting which might be exacerbated
+    // by my editor or might be a collision between eslint modules, or both.
     "indent": ["error", 2, {
       "ignoredNodes": ["JSXElement"],
       "SwitchCase": 1,

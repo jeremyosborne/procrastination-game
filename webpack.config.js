@@ -10,6 +10,9 @@ const SUPPORTED_BUILD_TYPES = ['development', 'production'].reduce((types, t) =>
 const SUPPORTED_BUILD_TYPES_DEFAULT = 'production'
 
 module.exports = (env, argv) => {
+  // Prevent cwd problems by anchoring everything from the location of the webpack file.
+  const ROOT_DIR = path.resolve(__dirname)
+
   //
   // debug or optimized builds?
   //
@@ -22,8 +25,11 @@ module.exports = (env, argv) => {
   }
   console.log('Using buildType:', buildType)
 
-  // Prevent cwd problems by anchoring everything from the location of the webpack file.
-  const ROOT_DIR = path.resolve(__dirname)
+  // Used in multiple spots. Allows reference within partials to the
+  const htmlWebpackPlugin = {
+    filename: 'index.html',
+    template: path.join(ROOT_DIR, 'src/html/index.html'),
+  }
 
   return {
     devServer: {
@@ -63,6 +69,20 @@ module.exports = (env, argv) => {
             }
           ],
         },
+        // Originally included to experiment with passing vars down to partials.
+        // Un-included for now due to awkwardness and a need to just move on
+        // since the amount of content on this site will always be minimal.
+        // {
+        //   test: /\.html$/,
+        //   use: [
+        //     {
+        //       loader: 'html-loader',
+        //       options: {
+        //         interpolate: true
+        //       },
+        //     }
+        //   ]
+        // },
         {
           test: /\.jsx?$/i,
           exclude: /(node_modules|bower_components)/,
@@ -75,6 +95,9 @@ module.exports = (env, argv) => {
     output: {
       filename: 'achievements-main.js',
       path: path.resolve(ROOT_DIR, 'dist'),
+      // If you change this, you better check the HTML template hrefs for anything
+      // that assumes publicPath to be what it is, like the site-header.
+      publicPath: '/',
     },
     plugins: [
       new CopyPlugin([
@@ -83,10 +106,7 @@ module.exports = (env, argv) => {
           to: path.join(ROOT_DIR, 'dist')
         },
       ]),
-      new HtmlWebpackPlugin({
-        filename: 'index.html',
-        template: path.join(ROOT_DIR, 'src/assets/index.html'),
-      }),
+      new HtmlWebpackPlugin(htmlWebpackPlugin),
     ],
     resolve: {
       // options for resolving module requests

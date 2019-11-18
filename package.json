@@ -24,6 +24,9 @@
   },
   "dependencies": {
     "classnames": "^2.2.6",
+    "ejs": "^2.7.2",
+    "ejs-html-loader": "^4.0.1",
+    "html-loader": "^0.5.5",
     "lodash": "^4.17.15",
     "react": "16.11.0",
     "react-dom": "^16.11.0"
