@@ -1,9 +1,5 @@
-import {
-  actionClick,
-  actionKeyDown,
-  actionTick,
-  useAppState,
-} from 'achievements/state'
+import {useAppState} from 'achievements/state'
+import * as events from 'achievements/state/events'
 import _ from 'lodash'
 import React from 'react'
 
@@ -12,8 +8,8 @@ export const EventListener = () => {
 
   React.useEffect(() => {
     const eventMap = {
-      click: (e) => dispatch(actionClick(e)),
-      keydown: (e) => dispatch(actionKeyDown(e)),
+      click: (e) => dispatch(events.click(e)),
+      keydown: (e) => dispatch(events.keyDown(e)),
     }
 
     _.forEach(eventMap, (eventListener, eventName) => {
@@ -22,7 +18,7 @@ export const EventListener = () => {
 
     // Ticks need a regular interval.
     const tickIntervalId = setInterval(() => {
-      dispatch(actionTick())
+      dispatch(events.tick())
     }, 1000)
 
     // Specify how to clean up after this effect:

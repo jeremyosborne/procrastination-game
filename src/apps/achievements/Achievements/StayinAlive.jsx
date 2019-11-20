@@ -1,6 +1,7 @@
 import ACHIEVEMENT_IDS from './achievement-ids'
 import Achievement from 'achievements/Achievement'
-import {actionAchievementsAchieved, useAppState} from 'achievements/state'
+import {useAppState} from 'achievements/state'
+import * as achievements from 'achievements/state/achievements'
 import _ from 'lodash'
 import React from 'react'
 
@@ -64,7 +65,7 @@ export const StayinAlive = () => {
     setProgress(progress)
 
     if (progress === 1) {
-      dispatch(actionAchievementsAchieved(ACHIEVEMENT_IDS.STAYIN_ALIVE))
+      dispatch(achievements.achieved(ACHIEVEMENT_IDS.STAYIN_ALIVE))
     }
   }, [achieved, dispatch, keys])
 

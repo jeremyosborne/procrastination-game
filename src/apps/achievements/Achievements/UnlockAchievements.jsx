@@ -1,6 +1,7 @@
 import ACHIEVEMENT_IDS from './achievement-ids'
 import Achievement from 'achievements/Achievement'
-import {actionAchievementsAchieved, useAppState} from 'achievements/state'
+import {useAppState} from 'achievements/state'
+import * as achievements from 'achievements/state/achievements'
 import _ from 'lodash'
 import React from 'react'
 
@@ -33,7 +34,7 @@ export const UnlockAchievements = () => {
     const updatedProgress = _.floor(ticks / ACHIEVEMENT_NUM_TICKS, 2)
     setProgress(updatedProgress)
     if (updatedProgress === 1) {
-      dispatch(actionAchievementsAchieved(ACHIEVEMENT_IDS.UNLOCK_ACHIEVEMENTS))
+      dispatch(achievements.achieved(ACHIEVEMENT_IDS.UNLOCK_ACHIEVEMENTS))
     }
   }, [achieved, dispatch, ticks])
 
