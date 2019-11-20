@@ -1,11 +1,12 @@
 // @flow
 import React from 'react'
+import {childrenType, styleType} from 'common/types'
 
 type Props = {
   /** Content of the card. */
-  children?: React.node,
+  children?: childrenType,
   /** CSS style override. */
-  style?: any,
+  style?: styleType,
 }
 
 // Contain the chievements in their normal card view.

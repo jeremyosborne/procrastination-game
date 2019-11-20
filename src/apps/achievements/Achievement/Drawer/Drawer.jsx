@@ -1,6 +1,6 @@
 import classNames from 'classnames/bind'
 import React from 'react'
-import {classNamesType, styleType} from 'common/types'
+import {childrenType, classNamesType, styleType} from 'common/types'
 
 import styles from './Drawer.css'
 
@@ -10,7 +10,7 @@ type Props = {
   /** Styling via className */
   className: classNamesType,
   /** Customized content of the drawer. */
-  children?: React.node,
+  children?: childrenType,
   /** open (true) or closed (false) */
   initialState?: boolean,
   /** CSS style override. */
