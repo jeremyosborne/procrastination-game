@@ -1,13 +1,15 @@
 import * as achievements from './achievements'
 import * as events from './events'
+import * as notifications from './notifications'
 import {NotRedux} from 'common/not-redux'
 import _ from 'lodash'
 import React from 'react'
 
-// All sub-state reducers must be added here the way we're rigging this up.
+// All sub-state reducers must be added here.
 const _reducerRegistry = {
   [achievements.REDUCER_KEY]: achievements.reducer,
   [events.REDUCER_KEY]: events.reducer,
+  [notifications.REDUCER_KEY]: notifications.reducer,
 }
 
 export const reducer = (state, action) => {
@@ -40,7 +42,6 @@ export const reducer = (state, action) => {
   return state
 }
 
-// Stick with the redux "ducks" pattern and export the reducer as default.
 export default reducer
 
 export const AppState = NotRedux
