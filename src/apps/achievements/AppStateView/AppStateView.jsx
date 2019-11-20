@@ -18,7 +18,12 @@ export const AppStateView = () => {
       <div className={cx('container', dynamicClasses)}>
         {
           open ?
-            <JSONView data={state} />
+            <>
+              <div>
+                <button type='button' onClick={() => setOpen(!open)}>hide state</button>
+              </div>
+              <JSONView data={state} />
+            </>
             :
             <button type='button' onClick={() => setOpen(!open)}>show state</button>
         }
