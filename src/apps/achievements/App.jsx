@@ -2,6 +2,7 @@ import Achievements from 'achievements/Achievements'
 import Achievement from 'achievements/Achievement'
 import AppStateView from 'achievements/AppStateView'
 import EventListener from 'achievements/EventListener'
+import Notifier from 'achievements/Notifier'
 import {AppState, reducer} from 'achievements/state'
 import _ from 'lodash'
 import React from 'react'
@@ -20,6 +21,7 @@ export const App = () => {
     <AppState.Provider value={{state, dispatch}}>
       <EventListener />
       <AppStateView />
+      <Notifier />
       <div
         style={{
           position: 'fixed',

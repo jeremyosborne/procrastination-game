@@ -25,7 +25,7 @@ Modern JS needs a tool chain and build process. The tools included in this proje
 - [X] Make this the basis for my website.
     - [X] Add styling and assets to static, copy to dist via copy plugin in webpack.
 - [X] Hide hacked up dev tools in prod build.
-- [ ] Toast/notifications for achievements.
+- [X] Toast/notifications for achievements.
 - [ ] Unlock Achievements Unlocked
     * Requirement: Spend a minute on the website.
     * Downstream: Unlock achievements. Is a pre-req for all achievements and requirements for achievements will not be recorded until this is achieved.
