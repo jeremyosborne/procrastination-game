@@ -41,7 +41,7 @@ module.exports = (env, argv) => {
       hot: true,
     },
     devtool: 'eval-source-map', // static output: source-map
-    entry: path.join(ROOT_DIR, 'src/apps/achievements/index.js'),
+    entry: path.join(ROOT_DIR, 'src/apps/main.js'),
     // For now, let webpack do a lot of the work for us since our buildTypes match theirs.
     mode: buildType,
     module: {
@@ -93,7 +93,8 @@ module.exports = (env, argv) => {
       ],
     },
     output: {
-      filename: 'achievements-main.js',
+      chunkFilename: '[name].chunk.js',
+      filename: '[name].js',
       path: path.resolve(ROOT_DIR, 'dist'),
       // If you change this, you better check the HTML template hrefs for anything
       // that assumes publicPath to be what it is, like the site-header.
