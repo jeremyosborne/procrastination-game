@@ -1,6 +1,6 @@
 import classNames from 'classnames'
-import React from 'react'
 import {classNamesType, styleType} from 'common/types'
+import React from 'react'
 
 type Props = {
   className?: classNamesType,

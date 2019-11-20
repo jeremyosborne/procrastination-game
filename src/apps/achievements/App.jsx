@@ -12,16 +12,11 @@ export const App = () => {
   return (
     <AppState.Provider value={{state, dispatch}}>
       <EventListener />
-      <Achievement.Drawer>
+      <Achievement.Drawer style={{position: 'fixed', bottom: 0, left: 0}}>
         <Achievements.UnlockAchievements />
         <Achievements.StayinAlive />
       </Achievement.Drawer>
-      {
-        process.env.NODE_ENV === 'development' ?
-          <AppStateView />
-          :
-          null
-      }
+      <AppStateView />
     </AppState.Provider>
   )
 }

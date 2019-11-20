@@ -1,25 +1,32 @@
 import classNames from 'classnames/bind'
 import React from 'react'
+import {classNamesType, styleType} from 'common/types'
 
 import styles from './Drawer.css'
 
 const cx = classNames.bind(styles)
 
 type Props = {
+  /** Styling via className */
+  className: classNamesType,
   /** Customized content of the drawer. */
-  children: any,
+  children?: React.node,
   /** open (true) or closed (false) */
   initialState?: boolean,
+  /** CSS style override. */
+  style?: styleType,
 }
 
 export const Drawer = ({
   children,
+  className = '',
   initialState = false,
+  style = {},
 }: Props = {}) => {
   const [open, setOpen] = React.useState(initialState)
 
   return (
-    <div className={cx('container', {open})}>
+    <div className={cx('container', {open}, className)} style={style}>
       <div className={cx('content', {open})}>
         {children}
       </div>
@@ -27,10 +34,11 @@ export const Drawer = ({
         aria-pressed='false'
         className={cx('button', {open})}
         onClick={() => setOpen(!open)}
+        onKeyDown={(e) => (e.which === 32 || e.which === 13) && setOpen(!open)}
         role='button'
         tabIndex='0'
       >
-        <span>+</span>
+        {open ? <span>-</span> : <span>+</span>}
       </div>
     </div>
   )

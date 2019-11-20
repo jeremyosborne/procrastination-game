@@ -27,6 +27,8 @@
 /* When !open, button is edged into view on the left side from the closed drawer. */
 .button {
   align-items: center;
+  background-color: rgb(240,240,240);
+  border-radius: 0 100% 100% 0;
   display: flex;
   height: 4.6rem;
   justify-content: center;
@@ -35,5 +37,6 @@
   width: 2.83rem;
 }
 .button.open {
+  border-radius: 100% 0 0 100%;
   position: static;
 }

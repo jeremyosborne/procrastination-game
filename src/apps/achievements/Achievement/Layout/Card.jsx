@@ -3,7 +3,7 @@ import React from 'react'
 
 type Props = {
   /** Content of the card. */
-  children: any,
+  children?: React.node,
   /** CSS style override. */
   style?: any,
 }
