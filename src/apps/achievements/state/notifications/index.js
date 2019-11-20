@@ -77,6 +77,7 @@ export function reset (payload) {
 const DEFAULT_STATE = []
 
 export function reducer (state = DEFAULT_STATE, action = {}) {
+  console.log('notification reducer state:', state)
   switch (action.type) {
     case DEQUEUE:
       return state.slice(1)

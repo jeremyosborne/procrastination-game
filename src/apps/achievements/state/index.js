@@ -24,7 +24,7 @@ export const reducer = (state, action) => {
   let subStateChanged = false
   const subStateDiff = {}
   _.forIn(_reducerRegistry, (r, key) => {
-    const subState = _.get(state, key) || {}
+    const subState = _.get(state, key) // || undefined as states can be more than objects
     const nextSubState = r(subState, action)
     if (nextSubState !== subState) {
       subStateChanged = true

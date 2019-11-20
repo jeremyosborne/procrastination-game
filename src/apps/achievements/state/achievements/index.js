@@ -11,7 +11,7 @@ export const achieved = (id) => {
   }
 }
 
-export const reducer = (state, action) => {
+export const reducer = (state = {}, action) => {
   switch (action.type) {
     case ACHIEVEMENTS_ACHIEVED:
       return {

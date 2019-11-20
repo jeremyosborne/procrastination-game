@@ -2,6 +2,7 @@ import ACHIEVEMENT_IDS from './achievement-ids'
 import Achievement from 'achievements/Achievement'
 import {useAppState} from 'achievements/state'
 import * as achievements from 'achievements/state/achievements'
+import {notify} from 'achievements/state/notifications'
 import _ from 'lodash'
 import React from 'react'
 
@@ -66,6 +67,7 @@ export const StayinAlive = () => {
 
     if (progress === 1) {
       dispatch(achievements.achieved(ACHIEVEMENT_IDS.STAYIN_ALIVE))
+      dispatch(notify('Achievement unlocked: Stayin\' Alive'))
     }
   }, [achieved, dispatch, keys])
 

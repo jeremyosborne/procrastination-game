@@ -2,6 +2,7 @@ import ACHIEVEMENT_IDS from './achievement-ids'
 import Achievement from 'achievements/Achievement'
 import {useAppState} from 'achievements/state'
 import * as achievements from 'achievements/state/achievements'
+import {notify} from 'achievements/state/notifications'
 import _ from 'lodash'
 import React from 'react'
 
@@ -35,6 +36,7 @@ export const UnlockAchievements = () => {
     setProgress(updatedProgress)
     if (updatedProgress === 1) {
       dispatch(achievements.achieved(ACHIEVEMENT_IDS.UNLOCK_ACHIEVEMENTS))
+      dispatch(notify('Achievements unlocked! Go unlock some more achievements.'))
     }
   }, [achieved, dispatch, ticks])
 
