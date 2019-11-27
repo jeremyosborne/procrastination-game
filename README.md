@@ -30,7 +30,7 @@ Modern JS needs a tool chain and build process. The tools included in this proje
     - [X] The blocked achievements need to be made visual.
     - Note: decided to make the blocking visual only. If someone really wants an achievement, they can get the achievement.
     * Requirement: Spend a bit of time procastinating on the site.
-- [ ] Achievement: Recruiter
+- [X] Achievement: WebCrawler
     * Requirement: Click/tap a social link.
 - [ ] Achievement: Cookie clicker
     * Requirement: click a bunch of times.

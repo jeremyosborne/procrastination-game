@@ -1,10 +1,34 @@
 import {useAppState} from 'achievements/state'
+import * as achievements from 'achievements/state/achievements'
 import * as events from 'achievements/state/events'
+import {notify} from 'achievements/state/notifications'
 import _ from 'lodash'
 import React from 'react'
 
 export const EventListener = () => {
-  const {dispatch} = useAppState()
+  const {state, dispatch} = useAppState()
+
+  // Isolate the the WebCrawler achievment handling.
+  // Also, we are handling this achievement here vs. in the controller vs.
+  // lack of middleware.
+  React.useEffect(() => {
+    const click = (e) => {
+      const ACHIEVEMENT_ID = achievements.IDS.WEB_CRAWLER
+      const isWebCrawlerCandidate = e.target.getAttribute('data-app') === 'social-link'
+      if (isWebCrawlerCandidate) {
+        // Have we already achieved web crawler?
+        if (!achievements.isAchieved(state, ACHIEVEMENT_ID)) {
+          dispatch(achievements.achieved(ACHIEVEMENT_ID))
+          dispatch(notify('Yes, that is what the web crawler would do.'))
+        }
+      }
+    }
+    window.addEventListener('click', click, false)
+
+    return () => {
+      window.removeEventListener('click', click, false)
+    }
+  }, [state, dispatch])
 
   React.useEffect(() => {
     const eventMap = {

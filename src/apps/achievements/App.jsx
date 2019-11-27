@@ -42,6 +42,7 @@ export const App = () => {
         <Achievement.Drawer>
           <Achievements.UnlockAchievements />
           <Achievements.StayinAlive />
+          <Achievements.WebCrawler />
         </Achievement.Drawer>
       </div>
       <div

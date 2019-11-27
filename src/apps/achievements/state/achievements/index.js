@@ -5,8 +5,9 @@ import _ from 'lodash'
 export const REDUCER_KEY = 'achievements'
 
 export const IDS = {
+  STAYIN_ALIVE: 'stayin-alive',
   UNLOCK_ACHIEVEMENTS: 'unlock-achievements',
-  STAYIN_ALIVE: 'stayin-alive'
+  WEB_CRAWLER: 'web-crawler',
 }
 
 export const ACHIEVEMENTS_ACHIEVED = 'jo/achievements/achieved'
@@ -54,7 +55,7 @@ export const isAchieved = (state: any, id: string): boolean => !!_.get(state, `$
 // status of unlocked achievements.
 //
 // How many ticks before the achievements are officially unlocked?
-export const UNLOCK_ACHIEVEMENT_REQUIRED_TICKS = 17
+export const UNLOCK_ACHIEVEMENT_REQUIRED_TICKS = 7
 //
 // 0 not done, 1 done, anything in between progress.
 export const unlockAchievementsProgress = (state: any): number => _.floor(ticks(state) / UNLOCK_ACHIEVEMENT_REQUIRED_TICKS, 2)
