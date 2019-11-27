@@ -43,6 +43,7 @@ export const App = () => {
           <Achievements.UnlockAchievements />
           <Achievements.StayinAlive />
           <Achievements.WebCrawler />
+          <Achievements.ClickingForCookies />
         </Achievement.Drawer>
       </div>
       <div

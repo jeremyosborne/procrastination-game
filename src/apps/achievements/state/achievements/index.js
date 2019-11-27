@@ -5,6 +5,7 @@ import _ from 'lodash'
 export const REDUCER_KEY = 'achievements'
 
 export const IDS = {
+  CLICKING_FOR_COOKIES: 'clicking-for-cookies',
   STAYIN_ALIVE: 'stayin-alive',
   UNLOCK_ACHIEVEMENTS: 'unlock-achievements',
   WEB_CRAWLER: 'web-crawler',

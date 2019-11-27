@@ -10,14 +10,14 @@ export const UnlockAchievements = () => {
   const ACHIEVEMENT_ID = achievements.IDS.UNLOCK_ACHIEVEMENTS
   const achieved = achievements.isAchieved(state, ACHIEVEMENT_ID) || false
   // Cap progress at 1 since we display it.
-  const progress = Math.min(1, achievements.unlockAchievementsProgress(state))
+  const progress = achievements.unlockAchievementsProgress(state)
 
   React.useEffect(() => {
     if (achieved) {
       return
     }
 
-    if (progress === 1) {
+    if (progress >= 1) {
       dispatch(achievements.achieved(ACHIEVEMENT_ID))
       dispatch(notify('Achievements unlocked! Maybe you can find more achievements?'))
     }

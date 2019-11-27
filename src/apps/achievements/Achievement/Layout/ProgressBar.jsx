@@ -21,7 +21,7 @@ export const ProgressBar = ({
     style={{
       backgroundColor: color,
       height: '0.5rem',
-      width: `${Math.floor(progress * 100)}%`,
+      width: `${Math.min(100, Math.floor(progress * 100))}%`,
       transition: 'all 0.5s',
       ...style,
     }}
