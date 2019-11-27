@@ -1,4 +1,3 @@
-import ACHIEVEMENT_IDS from './achievement-ids'
 import Achievement from 'achievements/Achievement'
 import {useAppState} from 'achievements/state'
 import * as achievements from 'achievements/state/achievements'
@@ -53,8 +52,9 @@ const calcLongestMatch = (a, b) => {
 export const StayinAlive = () => {
   const {dispatch, state} = useAppState()
   const [progress, setProgress] = React.useState(0)
+  const ACHIEVEMENT_ID = achievements.IDS.STAYIN_ALIVE
 
-  const achieved = _.get(state, `achievements.${ACHIEVEMENT_IDS.STAYIN_ALIVE}`) || false
+  const achieved = _.get(state, `achievements.${ACHIEVEMENT_ID}`) || false
   const keys = _.takeRight(_.get(state, 'events.keydowns') || [], ACHIEVEMENT_CODE.length)
 
   React.useEffect(() => {
@@ -66,15 +66,15 @@ export const StayinAlive = () => {
     setProgress(progress)
 
     if (progress === 1) {
-      dispatch(achievements.achieved(ACHIEVEMENT_IDS.STAYIN_ALIVE))
+      dispatch(achievements.achieved(ACHIEVEMENT_ID))
       dispatch(notify('Achievement unlocked: Stayin\' Alive'))
     }
-  }, [achieved, dispatch, keys])
+  }, [ACHIEVEMENT_ID, achieved, dispatch, keys])
 
   return (
     <Achievement.Layout.Card>
       <Achievement.Layout.Content>
-        {achieved ? <div>30 Lives!</div> : <div>You know the code...</div>}
+        {achieved ? <div>Stayin' Alive (with cheat codes) unlocked!</div> : <div>You know the code...</div>}
       </Achievement.Layout.Content>
       <Achievement.Layout.ProgressBar progress={progress} />
     </Achievement.Layout.Card>

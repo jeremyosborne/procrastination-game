@@ -26,13 +26,16 @@ Modern JS needs a tool chain and build process. The tools included in this proje
     - [X] Add styling and assets to static, copy to dist via copy plugin in webpack.
 - [X] Hide hacked up dev tools in prod build.
 - [X] Toast/notifications for achievements.
-- [ ] Unlock Achievements Unlocked
-    * Requirement: Spend a minute on the website.
-    * Downstream: Unlock achievements. Is a pre-req for all achievements and requirements for achievements will not be recorded until this is achieved.
+- [X] Unlock Achievements Unlocked
+    - [X] The blocked achievements need to be made visual.
+    - Note: decided to make the blocking visual only. If someone really wants an achievement, they can get the achievement.
+    * Requirement: Spend a bit of time procastinating on the site.
 - [ ] Achievement: Recruiter
     * Requirement: Click/tap a social link.
 - [ ] Achievement: Cookie clicker
     * Requirement: click a bunch of times.
-- [ ] Achievement: Long Live the 80s (or 90s, whichever seems more appropriate)
+- [X] Achievement: Stayin' Alive
     * Requirement: Input the konami code.
+- [ ] 404 page
+- [ ] change build, and repo, to publish to the `docs/` folder. `docs/` folder will become source and cannot be `.gitignore`d.
 - [ ] Do first publish back to jeremyosborne.com.

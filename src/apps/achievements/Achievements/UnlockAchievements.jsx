@@ -1,44 +1,27 @@
-import ACHIEVEMENT_IDS from './achievement-ids'
 import Achievement from 'achievements/Achievement'
 import {useAppState} from 'achievements/state'
 import * as achievements from 'achievements/state/achievements'
 import {notify} from 'achievements/state/notifications'
-import _ from 'lodash'
 import React from 'react'
-
-export const ACHIEVEMENT_NUM_TICKS = 10
 
 export const UnlockAchievements = () => {
   const {dispatch, state} = useAppState()
-  const [progress, setProgress] = React.useState(0)
 
-  const ticks = _.get(state, 'events.ticks') || 0
-  const achieved = _.get(state, `achievements.${ACHIEVEMENT_IDS.UNLOCK_ACHIEVEMENTS}`) || false
-
-  React.useEffect(() => {
-    if (achieved) {
-      return
-    }
-
-    // If not yet achieved, set previous progress.
-    const updatedProgress = _.floor(ticks / ACHIEVEMENT_NUM_TICKS, 2)
-    setProgress(updatedProgress)
-
-    // Bare dependencies is on purpose: run once at mount with the initial state.
-  }, []) // eslint-disable-line react-hooks/exhaustive-deps
+  const ACHIEVEMENT_ID = achievements.IDS.UNLOCK_ACHIEVEMENTS
+  const achieved = achievements.isAchieved(state, ACHIEVEMENT_ID) || false
+  // Cap progress at 1 since we display it.
+  const progress = Math.min(1, achievements.unlockAchievementsProgress(state))
 
   React.useEffect(() => {
     if (achieved) {
       return
     }
 
-    const updatedProgress = _.floor(ticks / ACHIEVEMENT_NUM_TICKS, 2)
-    setProgress(updatedProgress)
-    if (updatedProgress === 1) {
-      dispatch(achievements.achieved(ACHIEVEMENT_IDS.UNLOCK_ACHIEVEMENTS))
-      dispatch(notify('Achievements unlocked! Go unlock some more achievements.'))
+    if (progress === 1) {
+      dispatch(achievements.achieved(ACHIEVEMENT_ID))
+      dispatch(notify('Achievements unlocked! Maybe you can find more achievements?'))
     }
-  }, [achieved, dispatch, ticks])
+  }, [ACHIEVEMENT_ID, achieved, dispatch, progress])
 
   return (
     <Achievement.Layout.Card>

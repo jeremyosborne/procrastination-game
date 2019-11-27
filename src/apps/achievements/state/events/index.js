@@ -2,16 +2,18 @@ import _ from 'lodash'
 
 export const REDUCER_KEY = 'events'
 
-export const CLICK = 'jo/events/click'
-export const KEY_DOWN = 'jo/events/key-down'
-export const RESET = 'jo/events/reset'
-export const TICK = 'jo/events/tick'
+export const IDS = {
+  UNLOCK_ACHIEVEMENTS: 'unlock-achievements',
+  STAYIN_ALIVE: 'stayin-alive'
+}
 
+export const CLICK = 'jo/events/click'
 export const click = (e) => ({
   type: CLICK,
   payload: e || {}
 })
 
+export const KEY_DOWN = 'jo/events/key-down'
 export const keyDown = (e) => ({
   type: KEY_DOWN,
   payload: {
@@ -20,7 +22,13 @@ export const keyDown = (e) => ({
   }
 })
 
-export const tick = (e) => ({
+export const RESET = 'jo/events/reset'
+export const reset = () => ({
+  type: RESET
+})
+
+export const TICK = 'jo/events/tick'
+export const tick = () => ({
   type: TICK
 })
 
@@ -47,3 +55,9 @@ export const reducer = (state = {}, action) => {
       return state
   }
 }
+
+//
+// Selectors
+//
+// Ticks are used throughout, allow access as a number at all times.
+export const ticks = (state: any): number => _.get(state, 'events.ticks', 0)
