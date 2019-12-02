@@ -2,7 +2,7 @@
 
 Home of my web page and experiments.
 
-Gets built and published to `jeremyosborne.github.io`.
+Build here, copy to and publish from `jeremyosborne.github.io` repo.
 
 ## Configuration
 
@@ -49,9 +49,9 @@ cp dist/* ../jeremyosborne.github.io
 - [X] Achievement: Stayin' Alive
     * Requirement: Input the konami code.
 - [X] change build, and repo, to publish to the `docs/` folder. `docs/` folder will become source and cannot be `.gitignore`d.
-- [ ] Do first publish back to jeremyosborne.com.
-- [ ] 404 page
+- [X] Do first publish back to jeremyosborne.com.
 - [ ] Save/reload state on page unload/load.
+- [ ] 404 page
 - [ ] Attribute cookie image with the following and make it visible in the app. Leave in README for now.
 
 ```html
