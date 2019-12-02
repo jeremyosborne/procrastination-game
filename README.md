@@ -2,6 +2,8 @@
 
 Home of my web page and experiments.
 
+Gets built and published to `jeremyosborne.github.io`.
+
 ## Configuration
 
 * `NODE_PATH=src/apps:src` - applications will namespace due to allow for common names across different applications, root level modules are considered common.
@@ -17,6 +19,14 @@ Modern JS needs a tool chain and build process. The tools included in this proje
 * `webpack` acts as build orchestrator, linker, and packager. We use just enough of its magic to keep ourselves productive.
 * `postcss` tools have the job of CSS compiler since, to this day, Douglas Crawford is right about the meaning of `C` in `CSS`. Plus it also allows us to think of and pack our components as modules and separate out global CSS applied to all pages of our application from module specific CSS that should be managed by webpack.
 * `babel` has the job of JS code compiler and it's configuration should be good enough to take source code and turn it into intermediate style code that is handed off to other steps in the build process.
+
+### Publishing
+
+```
+npm run build
+# clean cruft out of jeremyosborne.github.io, then
+cp dist/* ../jeremyosborne.github.io
+```
 
 ## TODO
 

@@ -12,3 +12,6 @@ bower_components
 
 # Atom
 .imdone
+
+# Build
+dist
