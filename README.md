@@ -32,10 +32,29 @@ Modern JS needs a tool chain and build process. The tools included in this proje
     * Requirement: Spend a bit of time procastinating on the site.
 - [X] Achievement: WebCrawler
     * Requirement: Click/tap a social link.
-- [ ] Achievement: Cookie clicker
+- [X] Achievement: Cookie clicker
     * Requirement: click a bunch of times.
+    - [X] Basic code done.
+    - [X] Reward: Display a cookie on the screen where a click will open the page to "cookie clicker". Use `static/cookie-for-clicking.png`, and a link to https://orteil.dashnet.org/cookieclicker/
 - [X] Achievement: Stayin' Alive
     * Requirement: Input the konami code.
-- [ ] 404 page
-- [ ] change build, and repo, to publish to the `docs/` folder. `docs/` folder will become source and cannot be `.gitignore`d.
+- [X] change build, and repo, to publish to the `docs/` folder. `docs/` folder will become source and cannot be `.gitignore`d.
 - [ ] Do first publish back to jeremyosborne.com.
+- [ ] 404 page
+- [ ] Save/reload state on page unload/load.
+- [ ] Attribute cookie image with the following and make it visible in the app. Leave in README for now.
+
+```html
+<p style="font-size: 0.9rem;font-style: italic;">
+  <img style="display: block;" src="https://farm3.staticflickr.com/2491/3721266801_3e5cc5ca6e.jpg" alt="Cookie Trials and tribulations">
+  <a href="https://www.flickr.com/photos/12940611@N07/3721266801">"Cookie Trials and tribulations"</a>
+  <span> by <a href="https://www.flickr.com/photos/12940611@N07">cakespy</a></span> is licensed under
+  <a href="https://creativecommons.org/licenses/by-nc-nd/2.0/?ref=ccsearch&atype=html" style="margin-right: 5px;">CC BY-NC-ND 2.0</a>
+  <a href="https://creativecommons.org/licenses/by-nc-nd/2.0/?ref=ccsearch&atype=html" target="_blank" rel="noopener noreferrer" style="display: inline-block;white-space: none;margin-top: 2px;margin-left: 3px;height: 22px !important;">
+    <img style="height: inherit;margin-right: 3px;display: inline-block;" src="https://search.creativecommons.org/static/img/cc_icon.svg" />
+    <img style="height: inherit;margin-right: 3px;display: inline-block;" src="https://search.creativecommons.org/static/img/cc-by_icon.svg" />
+    <img style="height: inherit;margin-right: 3px;display: inline-block;" src="https://search.creativecommons.org/static/img/cc-nc_icon.svg" />
+    <img style="height: inherit;margin-right: 3px;display: inline-block;" src="https://search.creativecommons.org/static/img/cc-nd_icon.svg" />
+  </a>
+</p>
+```

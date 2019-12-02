@@ -95,7 +95,7 @@ module.exports = (env, argv) => {
     output: {
       chunkFilename: '[name].chunk.js',
       filename: '[name].js',
-      path: path.resolve(ROOT_DIR, 'dist'),
+      path: path.resolve(ROOT_DIR, 'docs'),
       // If you change this, you better check the HTML template hrefs for anything
       // that assumes publicPath to be what it is, like the site-header.
       publicPath: '/',
@@ -104,7 +104,7 @@ module.exports = (env, argv) => {
       new CopyPlugin([
         {
           from: path.join(ROOT_DIR, 'static'),
-          to: path.join(ROOT_DIR, 'dist')
+          to: path.join(ROOT_DIR, 'docs')
         },
       ]),
       new HtmlWebpackPlugin(htmlWebpackPlugin),

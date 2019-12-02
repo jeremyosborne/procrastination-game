@@ -5,6 +5,10 @@ import {notify} from 'achievements/state/notifications'
 import _ from 'lodash'
 import React from 'react'
 
+//
+// Non-visual component that listens for events we care about and publishes
+// NotRedux actions.
+//
 export const EventListener = () => {
   const {state, dispatch} = useAppState()
 

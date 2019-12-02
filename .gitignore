@@ -12,6 +12,3 @@ bower_components
 
 # Atom
 .imdone
-
-# Built application code.
-dist

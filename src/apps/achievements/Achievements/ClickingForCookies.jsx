@@ -6,7 +6,7 @@ import _ from 'lodash'
 import React from 'react'
 
 // Work for this one, sort of ;)
-export const NUM_CLICKS_FOR_THAT_COOKIE = 20
+export const NUM_CLICKS_FOR_THAT_COOKIE = 200
 
 export const ClickingForCookies = () => {
   const {dispatch, state} = useAppState()
@@ -32,7 +32,7 @@ export const ClickingForCookies = () => {
       <Achievement.Layout.Content>
         {
           achieved ?
-            <div>Clicking for Cookies unlocked!</div>
+            <div>Clicking for Cookies unlocked! (And this one doesn't need a banner.)</div>
             :
             <div>Cookies aren't just for eating or tracking...{progress >= 0.3 ? ' I believe in you!' : ''} {progress >= 0.7 ? ' Almost there!' : ''}</div>
         }

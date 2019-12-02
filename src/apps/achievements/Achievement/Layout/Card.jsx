@@ -18,6 +18,8 @@ export const Card = ({
     style={{
       backgroundColor: 'rgb(240,240,240)',
       display: 'flex',
+      // Prevent cards from being squished by flex container.
+      flex: '0 0 auto',
       flexDirection: 'column',
       height: '8.5rem',
       justifyContent: 'space-between',

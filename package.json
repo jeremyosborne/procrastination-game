@@ -5,7 +5,7 @@
   "private": "true",
   "main": "src/index.js",
   "scripts": {
-    "clean": "del dist/*",
+    "clean": "del docs/*",
     "build": "npm run clean && NODE_PATH=src/apps:src BUILD_TYPE=production webpack",
     "flow": "flow `# flow does not respect NODE_PATH, path alias handled in .flowconfig`",
     "lint": "eslint \"src/**/*.js?(x)\"",
