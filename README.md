@@ -50,7 +50,8 @@ cp dist/* ../jeremyosborne.github.io
     * Requirement: Input the konami code.
 - [X] change build, and repo, to publish to the `docs/` folder. `docs/` folder will become source and cannot be `.gitignore`d.
 - [X] Do first publish back to jeremyosborne.com.
-- [ ] Save/reload state on page unload/load.
+- [X] Save/reload state on page unload/load.
+- [ ] Remove cached state button for dev work.
 - [ ] 404 page
 - [ ] Attribute cookie image with the following and make it visible in the app. Leave in README for now.
 

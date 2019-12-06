@@ -23,7 +23,7 @@ export const EventListener = () => {
         // Have we already achieved web crawler?
         if (!achievements.isAchieved(state, ACHIEVEMENT_ID)) {
           dispatch(achievements.achieved(ACHIEVEMENT_ID))
-          dispatch(notify('Yes, that is what the web crawler would do.'))
+          dispatch(notify('Achievement unlocked: Yes, that is what the web crawler would do.'))
         }
       }
     }

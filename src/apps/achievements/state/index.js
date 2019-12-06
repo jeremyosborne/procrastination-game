@@ -17,6 +17,8 @@ export const reducer = (state, action) => {
   switch (action.type) {
     case 'reset':
       return {}
+    case 'set':
+      return state.payload
     default:
       break
   }

@@ -3,6 +3,7 @@ import Achievement from 'achievements/Achievement'
 import AppStateView from 'achievements/AppStateView'
 import EventListener from 'achievements/EventListener'
 import Notifier from 'achievements/Notifier'
+import PersistState from 'achievements/PersistState'
 import {AppState, reducer} from 'achievements/state'
 import * as achievements from 'achievements/state/achievements'
 import React from 'react'
@@ -17,7 +18,14 @@ import React from 'react'
 // `index.js`.
 //
 export const App = () => {
-  const initialState = {}
+  let initialState
+  try {
+    // See PersistState for how the data gets saved.
+    initialState = JSON.parse(window.localStorage['jwo-achievements'] || '{}')
+  } catch (err) {
+    console.warn('Could not read value stored for achievements state. Reverting to empty initial state.')
+    initialState = {}
+  }
   const [state, dispatch] = React.useReducer(reducer, initialState)
 
   // We show two different views depending on whether the first achievement has
@@ -31,6 +39,7 @@ export const App = () => {
     <AppState.Provider value={{state, dispatch}}>
       <EventListener />
       <AppStateView />
+      <PersistState />
       <Notifier />
       {/*
         Extra cookie award. Since the drawer is fixed position, this needs to
