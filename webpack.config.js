@@ -40,7 +40,7 @@ module.exports = (env, argv) => {
       contentBase: path.join(__dirname, 'static'),
       hot: true,
     },
-    devtool: 'eval-source-map', // static output: source-map
+    devtool: buildType === 'production' ? 'source-map' : 'eval-source-map',
     entry: path.join(ROOT_DIR, 'src/apps/main.js'),
     // For now, let webpack do a lot of the work for us since our buildTypes match theirs.
     mode: buildType,
